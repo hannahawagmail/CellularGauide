@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/Goldenrod"
+    android:orientation="vertical" >
+    <EditText
+        android:id="@+id/reg_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" 
+        android:text="hanna.hawa@gmail.com"
+		android:singleLine="true"
+        />
+    <EditText
+        android:id="@+id/reg_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+		android:singleLine="true" 
+        android:text="12345678"
+        />
+    <EditText
+        android:id="@+id/reg_fname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" 
+        android:text="Hanna"
+        android:singleLine="true"
+        />
+    <EditText
+        android:id="@+id/reg_lname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" 
+        android:text="Hawa"
+        android:singleLine="true"
+        >
+		<requestFocus />
+    </EditText>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+		<Button
+	    	android:id="@+id/register_btn"
+ 			android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content" 
+	    	android:textColor="@color/Black"
+	    	android:text="Register"
+	    	android:textSize="20dp"
+	    	android:background="@color/GhostWhite"
+	    	android:minWidth="150dip"
+	    	android:layout_marginBottom="2dip"
+	    	android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+	    	/>
+    	<Button 
+    	    android:id="@+id/cancel_btn"
+ 			android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content" 
+	    	android:textColor="@color/Black"
+	    	android:text="Cancel"
+	    	android:textSize="20dp"
+	    	android:background="@color/GhostWhite"
+	    	android:minWidth="150dip"
+	    	android:layout_marginBottom="2dip"
+	    	android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+	    	/>
+	</RelativeLayout>
+
+</LinearLayout>

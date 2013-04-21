@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CellularG</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="toast_item_click">"You clicked on: "</string>
+    <string name="label_list_view">List View</string>
+    <string name="label_view_route">Show Routes</string>
+    <string name="label_view_place">Show Places</string>
+</resources>
