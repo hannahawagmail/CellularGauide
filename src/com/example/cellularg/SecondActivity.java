@@ -60,31 +60,6 @@ public class SecondActivity extends FragmentActivity implements ChatIF{
 			case GPSPOINTS:
 				Log.i("999999*************", "Doneeeeeee");
 				break;
-			case GETFILEFROMSERVER:
-				 SaveFileAs(msgSrv.getObj());
-				 break;
 		}
-	}
-	
-	public void SaveFileAs(Object obj) {
-			
-		byte[] bytes = (byte[])obj;
-		    OutputStream st;
-		    try {
-		    	String aa = "/storage/sdcard0/";
-				boolean success;
-				success = (new File(aa+"CellularGuide")).mkdirs();
-				if (!success) {
-				  
-				}
-		    	st = new FileOutputStream("/storage/sdcard0/CellularGuide/hhhhhhh" + ".mp3");
-		    	st.write(bytes);			
-				st.flush();		    	
-				st.close();
-		    }
-			catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 	}
 }
