@@ -36,12 +36,12 @@ public class MyService extends Service {
 		try {
 			Log.i("fdsfsdf","works in service");
 			//TODO: create function to check the location
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 			Intent i = new Intent();
 			i.setAction(Intent.ACTION_MAIN);
 			i.addCategory(Intent.CATEGORY_LAUNCHER);
 			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			ComponentName cn = new ComponentName(this, SecondActivity.class);
+			ComponentName cn = new ComponentName(this, Main_activity_after_navigate.class);
 			i.setComponent(cn);
 			startActivity(i);
 			stopSelf();

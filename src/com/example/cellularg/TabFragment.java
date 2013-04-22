@@ -82,11 +82,7 @@ public class TabFragment extends Fragment {
 				msgValue.add(Float.toString(d));
 				msgToServ = new SystemObject(msgValue,SystemMode.GPSPOINTS);
 				ConnectionControl.sendToServer(msgToServ);
-				*/
-			Integer i=Integer.valueOf(1);
-			msgToServ = new SystemObject(i,SystemMode.GETFILEFROMSERVER);
-			ConnectionControl.sendToServer(msgToServ);
-			
+				*/			
 			}
 		});
         return view;
