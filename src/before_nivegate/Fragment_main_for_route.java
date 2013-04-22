@@ -99,15 +99,10 @@ public class Fragment_main_for_route extends Fragment {
 			public void onClick(View v) {
 				//TODO: call the waze with the first link
 				getActivity().getApplicationContext().startService(new Intent(getActivity().getApplicationContext(), MyService.class));
-		        goToUrl (FragmentTabTutorialApplication.sLocations.get(position).wazeLink);
+		        goToUrl (FragmentTabTutorialApplication.places_in_route.get(0).wazeLink);
 			}
 		});
         return view;
-    }
-	public void onPause()
-    {
-    	super.onPause();
-    	Log.i("********************","in fragment main for route !!!!!!!!!");
     }
 	private void goToUrl (String url) {
         Uri uriUrl = Uri.parse(url);
