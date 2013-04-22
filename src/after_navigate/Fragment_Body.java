@@ -44,7 +44,7 @@ public class Fragment_Body extends Fragment {
 	Integer position;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main_before_navigate_place, container, false);
+        View view = inflater.inflate(R.layout.fragment_tab_body_an, container, false);
         return view;
     }
 }

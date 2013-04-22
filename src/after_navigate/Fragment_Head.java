@@ -26,7 +26,7 @@ public class Fragment_Head extends Fragment {
     
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tab_before_navigate, container, false);
+        View view = inflater.inflate(R.layout.fragment_tab_header_an, container, false);
         return view;
     }
 }
