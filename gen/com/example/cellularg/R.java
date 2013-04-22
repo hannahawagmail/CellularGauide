@@ -169,33 +169,25 @@ public final class R {
         public static final int road=0x7f020003;
     }
     public static final class id {
-        public static final int AbsoluteLayout1=0x7f090020;
+        public static final int ButtonPlayStop=0x7f090021;
         public static final int IP=0x7f090005;
         public static final int PORT=0x7f090006;
-<<<<<<< HEAD
-        public static final int action_settings=0x7f090027;
+        public static final int RelativeLayout1=0x7f09001f;
+        public static final int SeekBar01=0x7f090022;
+        public static final int action_settings=0x7f09002c;
         public static final int backButton_in_main_bn=0x7f090013;
         public static final int backButton_in_main_bn_route=0x7f09001c;
-        public static final int cancel_btn=0x7f090026;
-=======
-        public static final int action_settings=0x7f09002a;
-        public static final int backButton_in_main_bn=0x7f090013;
-        public static final int backButton_in_main_bn_route=0x7f09001c;
-        public static final int cancel_btn=0x7f090029;
->>>>>>> layouts header and body
+        public static final int cancel_btn=0x7f09002b;
+        public static final int editText1=0x7f090020;
         public static final int email=0x7f090003;
         public static final int fragment_content=0x7f090001;
         public static final int fragment_content_Body_an=0x7f09000a;
         public static final int fragment_content_header_an=0x7f090009;
         public static final int fragment_content_sec=0x7f090000;
         public static final int frame=0x7f090002;
-        public static final int imageView1=0x7f090021;
+        public static final int imageView1=0x7f090023;
         public static final int listView1=0x7f090019;
-<<<<<<< HEAD
-        public static final int list_label=0x7f09001f;
-=======
-        public static final int list_label=0x7f090022;
->>>>>>> layouts header and body
+        public static final int list_label=0x7f090024;
         public static final int list_view_place=0x7f09001d;
         public static final int list_view_route=0x7f09001e;
         public static final int login=0x7f090007;
@@ -203,23 +195,13 @@ public final class R {
         public static final int mainTextView_in_main_bn=0x7f09000c;
         public static final int mainTextView_in_main_bn_route=0x7f090015;
         public static final int password=0x7f090004;
-<<<<<<< HEAD
-        public static final int progressBar1=0x7f090020;
-        public static final int reg_email=0x7f090021;
-        public static final int reg_fname=0x7f090023;
-        public static final int reg_lname=0x7f090024;
-        public static final int reg_password=0x7f090022;
+        public static final int progressBar1=0x7f090025;
+        public static final int reg_email=0x7f090026;
+        public static final int reg_fname=0x7f090028;
+        public static final int reg_lname=0x7f090029;
+        public static final int reg_password=0x7f090027;
         public static final int register=0x7f090008;
-        public static final int register_btn=0x7f090025;
-=======
-        public static final int progressBar1=0x7f090023;
-        public static final int reg_email=0x7f090024;
-        public static final int reg_fname=0x7f090026;
-        public static final int reg_lname=0x7f090027;
-        public static final int reg_password=0x7f090025;
-        public static final int register=0x7f090008;
-        public static final int register_btn=0x7f090028;
->>>>>>> layouts header and body
+        public static final int register_btn=0x7f09002a;
         public static final int startNivigate_in_main_bn=0x7f090012;
         public static final int startNivigate_in_main_bn_route=0x7f09001b;
         public static final int subTextView_in_main_bn=0x7f090010;

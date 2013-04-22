@@ -1,17 +1,55 @@
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/AbsoluteLayout1"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/Goldenrod" >
+    android:background="@color/White"
+    android:columnCount="1" >
 
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="14dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="Mark Elliot Zuckerberg (born May 14, 1984) is an American computer programmer and Internet entrepreneur. He is best known as one of five co-founders of the social networking website Facebook. As of April 2013, Zuckerberg is the chairman and chief executive of Facebook, Inc.[5][6] and in 2012 his personal wealth was estimated to be US$9.4 billion.[4]" >
 
+        <requestFocus />
+    </EditText>
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="326dp"
-        android:layout_height="306dp"
-        android:layout_x="-6dp"
-        android:layout_y="-48dp"
-        android:src="@drawable/road" />
+   <Button
+       android:id="@+id/ButtonPlayStop"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/editText1"
+       android:layout_marginBottom="53dp"
+       android:layout_toLeftOf="@+id/SeekBar01"
+       android:text="play"
+       android:textSize="15pt"
+       android:textStyle="bold" />
 
-</AbsoluteLayout>
+   <SeekBar
+       android:id="@+id/SeekBar01"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignBottom="@+id/ButtonPlayStop"
+       android:layout_alignParentRight="true"
+       android:layout_marginBottom="11dp"
+       android:layout_marginRight="38dp"
+       android:minWidth="200dp" />
+
+   <ImageView
+       android:id="@+id/imageView1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_above="@+id/ButtonPlayStop"
+       android:layout_alignRight="@+id/SeekBar01"
+       android:layout_marginBottom="39dp"
+       android:layout_marginRight="38dp"
+       android:src="@drawable/road" />
+
+</RelativeLayout>

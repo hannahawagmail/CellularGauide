@@ -18,19 +18,24 @@ import android.R.integer;
 import android.content.Context;
 import android.content.Intent;
 import android.location.LocationManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.webkit.WebView.FindListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class Fragment_Body extends Fragment {
@@ -42,9 +47,75 @@ public class Fragment_Body extends Fragment {
 	private ImageView imageMainView;
 	public Intent intentMain;
 	Integer position;
+	public Button loginButton;
+	public int flag=0;
+	public String WazeURL;
+	public Intent i;
+	private Button buttonPlayStop;
+	private SeekBar seekBar;
+	public LocationManager locationManager;
+	public MediaPlayer MP;
+	private  Handler handler;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab_body_an, container, false);
+        handler = new Handler();
+        MP = MediaPlayer.create(view.getContext(), Uri.parse("/storage/sdcard0/CellularGuide/AA.mp3"));
+        buttonPlayStop = (Button) view.findViewById(R.id.ButtonPlayStop);
+        seekBar = (SeekBar) view.findViewById(R.id.SeekBar01);
+    	seekBar.setMax(MP.getDuration());
+        buttonPlayStop.setOnClickListener(new OnClickListener() {@Override public void onClick(View v) {buttonClick();}});
+		seekBar.setOnTouchListener(new OnTouchListener() {@Override public boolean onTouch(View v, MotionEvent event) {
+		seekChange(v);
+		return false; }
+		});
         return view;
     }
+    
+    
+    
+    
+  
+	
+    public void startPlayProgressUpdater() {
+    	seekBar.setProgress(MP.getCurrentPosition());
+    	
+		if (MP.isPlaying()) {
+			Runnable notification = new Runnable() {
+		        public void run() {
+		        	startPlayProgressUpdater();
+				}
+		    };
+		    handler.postDelayed(notification,1000);
+    	}else{
+    		MP.pause();
+    		buttonPlayStop.setText("play");
+    		seekBar.setProgress(0);
+    	}
+    } 
+ 
+    // This is event handler thumb moving event
+    private void seekChange(View v){
+    	if(MP.isPlaying()){
+	    	SeekBar sb = (SeekBar)v;
+			MP.seekTo(sb.getProgress());
+		}
+    }
+ 
+    // This is event handler for buttonClick event
+    private void buttonClick(){
+        if (buttonPlayStop.getText().equals("play")) {
+            buttonPlayStop.setText("pause");
+            try{
+            	MP.start();
+                startPlayProgressUpdater(); 
+            }catch (IllegalStateException e) {
+            	MP.pause();
+            }
+        }else {
+            buttonPlayStop.setText("play");
+            MP.pause();
+        }
+    }
+	
 }
