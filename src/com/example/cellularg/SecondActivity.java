@@ -27,7 +27,6 @@ import android.widget.Toast;
 
 public class SecondActivity extends FragmentActivity implements ChatIF{
 	public TcpClient client;
-	public LocationManager locationManager;
 	private SystemObject msgToServ;
 	boolean reciveMSG = false;
 	@Override
@@ -44,13 +43,7 @@ public class SecondActivity extends FragmentActivity implements ChatIF{
             LocationListFragment listFragment = new LocationListFragment();
             ft.replace(R.id.fragment_content, listFragment);
             ft.commit();
-            }
-        locationManager =(LocationManager)getSystemService(Context.LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 
-        		0, 
-        		0,
-        		new GPSLocation()
-        		);
+        }
     }
 	@Override
 	public void display(Object msg) {

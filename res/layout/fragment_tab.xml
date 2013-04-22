@@ -20,11 +20,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_view_route" />
-        <Button
-            android:id="@+id/list_view_tab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_list_view" />
     </LinearLayout>
 
     <View

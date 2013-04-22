@@ -14,7 +14,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class TabFragment extends Fragment {
-	public Button list_view_tab;
 	public Button list_view_route;
 	public Button list_view_place;
 
@@ -60,48 +59,6 @@ public class TabFragment extends Fragment {
 				}
 			}
 		});
-        list_view_tab = (Button) view.findViewById(R.id.list_view_tab);
-        list_view_tab.setOnClickListener(new OnClickListener() {
-        	
-			public void onClick(View v) {
-		   /*	double lattitude,longtitude;
-				lattitude=GPSLocation.lattitude;
-				longtitude=GPSLocation.atitude;
-				//ConnectionControl.client.setClientUI((ChatIF)getActivity());
-				ArrayList<String> msgValue = new ArrayList<String>();
-				msgValue.add(Double.toString(longtitude));
-				msgValue.add(Double.toString(lattitude));
-				float d=distinationInMeters(lattitude,longtitude,32.9134697284472,35.287984217295545 );
-				if(lattitude!=0 && d<15)
-				{
-					msgValue.add("IN");
-					
-				}
-				else
-					msgValue.add("OUT");
-				msgValue.add(Float.toString(d));
-				msgToServ = new SystemObject(msgValue,SystemMode.GPSPOINTS);
-				ConnectionControl.sendToServer(msgToServ);
-				*/			
-			}
-		});
         return view;
     }
-    
-    
-public static float distinationInMeters(double lat1, double lng1, double lat2, double lng2) {
-		
-	    double earthRadius = 3958.75;
-	    double dLat = Math.toRadians(lat2-lat1);
-	    double dLng = Math.toRadians(lng2-lng1);
-	    double a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-	               Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) *
-	               Math.sin(dLng/2) * Math.sin(dLng/2);
-	    double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-	    double dist = earthRadius * c;
-
-	    int meterConversion = 1609;
-
-	    return new Float(dist * meterConversion).floatValue();
-}
 }
