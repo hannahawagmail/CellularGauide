@@ -20,10 +20,8 @@ public class TabFragment extends Fragment {
     private static final int ROUTE_STATE = 0x1;
     private static final int PLACE_STATE = 0x2;
     private int mTabState;
-    
 	SystemObject msgToServ;
-
-    
+	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab, container, false);

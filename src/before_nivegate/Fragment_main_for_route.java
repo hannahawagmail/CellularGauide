@@ -56,8 +56,8 @@ public class Fragment_main_for_route extends Fragment {
         backButton = (Button) view.findViewById(R.id.backButton_in_main_bn_route);
         startButton = (Button)view.findViewById(R.id.startNivigate_in_main_bn_route);
         mainTextView = (TextView)view.findViewById(R.id.mainTextView_in_main_bn_route);
-        
-        position = FragmentTabTutorialApplication.currentPlace;
+
+        position = FragmentTabTutorialApplication.position;
         mainTextView.setText(FragmentTabTutorialApplication.sRoutes.get(position).routeName);
         
         FragmentTabTutorialApplication.initList(FragmentTabTutorialApplication.sRoutes.get(position).idRoute);
@@ -98,6 +98,7 @@ public class Fragment_main_for_route extends Fragment {
 			@Override
 			public void onClick(View v) {
 				//TODO: call the waze with the first link
+				FragmentTabTutorialApplication.currentPlace=FragmentTabTutorialApplication.places_in_route.get(0).idPlace;
 				getActivity().getApplicationContext().startService(new Intent(getActivity().getApplicationContext(), MyService.class));
 		        goToUrl (FragmentTabTutorialApplication.places_in_route.get(0).wazeLink);
 			}

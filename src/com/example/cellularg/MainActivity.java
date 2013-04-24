@@ -15,8 +15,10 @@ import network.ConnectionControl;
 import network.SystemMode;
 import network.SystemObject;
 import android.os.Bundle;
+import android.os.Environment;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -48,9 +50,9 @@ public class MainActivity extends Activity implements ChatIF{
         Port = (EditText) findViewById(R.id.PORT);
         password = (EditText) findViewById(R.id.password);
         userEmail = (EditText) findViewById(R.id.email);
-        //mIP=  "192.168.1.7";
+        mIP=  "192.168.1.7";
         //mIP=  "172.20.10.5";
-        mIP=  "87.69.244.100";
+        //mIP=  "87.69.244.100";
         mPort=8080;
         Thread toRun = new Thread(new Runnable() {
 			

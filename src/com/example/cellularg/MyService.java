@@ -45,7 +45,7 @@ public class MyService extends Service {
 		try {
 			Log.i("fdsfsdf","works in service");
 			//TODO: create function to check the location
-			Thread.sleep(1000);
+			Thread.sleep(10000);
 			Intent i = new Intent();
 			i.setAction(Intent.ACTION_MAIN);
 			i.addCategory(Intent.CATEGORY_LAUNCHER);

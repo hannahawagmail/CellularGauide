@@ -1,5 +1,7 @@
 package after_navigate;
 
+import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import com.example.cellularg.MyService;
@@ -17,10 +19,14 @@ import GPSclass.GPSLocation;
 import android.R.integer;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.graphics.BitmapFactory;
 import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -39,28 +45,34 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class Fragment_Body extends Fragment {
-	public   Intent launchBrowser;
-	private Button backButton;
-	private Button startButton;
-	private TextView mainTextView;
-	private TextView subTextView;
-	private ImageView imageMainView;
-	public Intent intentMain;
-	Integer position;
-	public Button loginButton;
-	public int flag=0;
-	public String WazeURL;
-	public Intent i;
+	
 	private Button buttonPlayStop;
 	private SeekBar seekBar;
-	public LocationManager locationManager;
-	public MediaPlayer MP;
+	private MediaPlayer MP;
 	private  Handler handler;
+	private ImageView imageView;
+	private int currentStation;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab_body_an, container, false);
         handler = new Handler();
-        MP = MediaPlayer.create(view.getContext(), Uri.parse("/storage/sdcard0/CellularGuide/AA.mp3"));
+        currentStation = FragmentTabTutorialApplication.stations_for_place.get(FragmentTabTutorialApplication.currentStation).idStation;
+		File path = Environment.getExternalStorageDirectory(); 
+		String pathS = path.getPath();
+        MP = MediaPlayer.create(view.getContext(), Uri.parse(pathS+"/CellularGuide/" +FragmentTabTutorialApplication.currentPlace+"/"+currentStation+ ".mp3"));
+//        File imgFile = new  File(pathS+"/CellularGuide/" +FragmentTabTutorialApplication.currentPlace+"/"+currentStation+ ".jpg");
+//        BitmapFactory.Options bmo = new BitmapFactory.Options();
+//        bmo.inPreferredConfig = Config.ARGB_8888;
+//        if(imgFile.exists()){
+//            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath(), bmo);
+//
+//            imageView = (ImageView) view.findViewById(R.id.imageView1);
+//            imageView.setImageBitmap(myBitmap);
+//
+//        }
+        //TODO: fix the image!! 
+        imageView = (ImageView) view.findViewById(R.id.imageView1);
+        imageView.setImageURI(Uri.parse(pathS+"/CellularGuide/" +FragmentTabTutorialApplication.currentPlace+"/"+currentStation+ ".jpg"));
         buttonPlayStop = (Button) view.findViewById(R.id.ButtonPlayStop);
         seekBar = (SeekBar) view.findViewById(R.id.SeekBar01);
     	seekBar.setMax(MP.getDuration());
@@ -71,12 +83,6 @@ public class Fragment_Body extends Fragment {
 		});
         return view;
     }
-    
-    
-    
-    
-  
-	
     public void startPlayProgressUpdater() {
     	seekBar.setProgress(MP.getCurrentPosition());
     	

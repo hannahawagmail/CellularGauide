@@ -16,7 +16,7 @@
         android:layout_marginLeft="14dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:text="Mark Elliot Zuckerberg (born May 14, 1984) is an American computer programmer and Internet entrepreneur. He is best known as one of five co-founders of the social networking website Facebook. As of April 2013, Zuckerberg is the chairman and chief executive of Facebook, Inc.[5][6] and in 2012 his personal wealth was estimated to be US$9.4 billion.[4]" >
+        android:text="Mark Elliot Zuckerberg" >
 
         <requestFocus />
     </EditText>

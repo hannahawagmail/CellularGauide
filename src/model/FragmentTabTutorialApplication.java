@@ -15,6 +15,7 @@ public class FragmentTabTutorialApplication extends Application {
     public static boolean place_or_route = true;
     //this variable update the number of the place that the user chooses
     public static int currentPlace = 0;
+    public static int position = 0;
     public static ArrayList<LocationModel> sLocations = new ArrayList<LocationModel>();
     
     public static ArrayList<LocationModel> places_in_route = new ArrayList<LocationModel>();
@@ -22,7 +23,10 @@ public class FragmentTabTutorialApplication extends Application {
     public static ArrayList<RouteModel> sRoutes = new ArrayList<RouteModel>();
     
     public static ArrayList<ArrayList<Integer>> array = new ArrayList<ArrayList<Integer>>();
-
+    
+    public static ArrayList<StationModel> stations_for_place = new ArrayList<StationModel>();
+    
+	public static int currentStation;
     
     public static void addToLocationModel(LocationModel location){
     	sLocations.add(location);
@@ -38,6 +42,11 @@ public class FragmentTabTutorialApplication extends Application {
 		array.add(pathplace);
 	}
 	
+	public static void addToStationArray(StationModel station) {
+		// TODO Auto-generated method stub
+		stations_for_place.add(station);
+	}
+	
 	public static void initList(int id_area) {
 		places_in_route.clear();
 		for(int j=0; j<array.size();j++)
@@ -47,5 +56,14 @@ public class FragmentTabTutorialApplication extends Application {
 					{
 						places_in_route.add(sLocations.get(i));
 					}
+	}
+
+	public static void setCurrentID(Integer selected_id) {
+		// TODO Auto-generated method stub
+		position = selected_id;
+		if(place_or_route == true)
+		{
+			currentPlace = sLocations.get(selected_id).idPlace;
+		}
 	}
 }

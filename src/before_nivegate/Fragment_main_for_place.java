@@ -51,7 +51,7 @@ public class Fragment_main_for_place extends Fragment {
         subTextView = (TextView)view.findViewById(R.id.subTextView_in_main_bn);
         imageMainView = (ImageView)view.findViewById(R.id.mainImageView_in_main_bn);
         
-        position = FragmentTabTutorialApplication.currentPlace;
+        position = FragmentTabTutorialApplication.position;
         mainTextView.setText(FragmentTabTutorialApplication.sLocations.get(position).placeName);
         subTextView.setText(FragmentTabTutorialApplication.sLocations.get(position).discribtion);
         
