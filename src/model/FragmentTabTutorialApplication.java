@@ -13,9 +13,11 @@ public class FragmentTabTutorialApplication extends Application {
 	//this variable set if the user goes by place or by value.
 	//true if the user choose to go to specific place or false if he choose to go by route
     public static boolean place_or_route = true;
-    //this variable update the number of the place that the user chooses
-    public static int currentPlace = 0;
-    public static int position = 0;
+    //save the position of the corrent place array in slocation if place_or_route true. and position of place in places_in_route if place_or_route false
+    public static int currentPlacePosition = 0;
+    //save the array of the station position in stations_for_place
+    public static int currentStationPosition = 0;
+
     public static ArrayList<LocationModel> sLocations = new ArrayList<LocationModel>();
     
     public static ArrayList<LocationModel> places_in_route = new ArrayList<LocationModel>();
@@ -25,8 +27,6 @@ public class FragmentTabTutorialApplication extends Application {
     public static ArrayList<ArrayList<Integer>> array = new ArrayList<ArrayList<Integer>>();
     
     public static ArrayList<StationModel> stations_for_place = new ArrayList<StationModel>();
-    
-	public static int currentStation;
     
     public static void addToLocationModel(LocationModel location){
     	sLocations.add(location);
@@ -56,14 +56,5 @@ public class FragmentTabTutorialApplication extends Application {
 					{
 						places_in_route.add(sLocations.get(i));
 					}
-	}
-
-	public static void setCurrentID(Integer selected_id) {
-		// TODO Auto-generated method stub
-		position = selected_id;
-		if(place_or_route == true)
-		{
-			currentPlace = sLocations.get(selected_id).idPlace;
-		}
 	}
 }

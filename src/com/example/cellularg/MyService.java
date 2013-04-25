@@ -1,5 +1,6 @@
 package com.example.cellularg;
 
+import model.FragmentTabTutorialApplication;
 import GPSclass.GPSLocation;
 import android.app.Service;
 import android.content.ComponentName;
@@ -14,6 +15,8 @@ import android.widget.Toast;
 public class MyService extends Service {
 	private static final String TAG = "MyService";
 	public LocationManager locationManager;
+	double lattitude=0,longtitude=0;
+	private boolean placeReached=false;
 	@Override
 	public IBinder onBind(Intent intent) {
 		
@@ -40,44 +43,48 @@ public class MyService extends Service {
 	
 	@Override
 	public void onStart(Intent intent, int startid) {
-		//TODO: create new fragmentactivity that contain the information about the place that we reach
 		Log.e(TAG, "onStart");
-		try {
-			Log.i("fdsfsdf","works in service");
-			//TODO: create function to check the location
-			Thread.sleep(10000);
-			Intent i = new Intent();
-			i.setAction(Intent.ACTION_MAIN);
-			i.addCategory(Intent.CATEGORY_LAUNCHER);
-			i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-			ComponentName cn = new ComponentName(this, Main_activity_after_navigate.class);
-			i.setComponent(cn);
-			startActivity(i);
-			stopSelf();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		double placedAtt;
+		double placeLatt;
+		if(FragmentTabTutorialApplication.place_or_route==true)
+		{
+			placedAtt = FragmentTabTutorialApplication.sLocations.get(FragmentTabTutorialApplication.currentPlacePosition).attitude;
+			placeLatt = FragmentTabTutorialApplication.sLocations.get(FragmentTabTutorialApplication.currentPlacePosition).latitude;
 		}
-	}
-	   /*	double lattitude,longtitude;
-			lattitude=GPSLocation.lattitude;
-			longtitude=GPSLocation.atitude;
-			//ConnectionControl.client.setClientUI((ChatIF)getActivity());
-			ArrayList<String> msgValue = new ArrayList<String>();
-			msgValue.add(Double.toString(longtitude));
-			msgValue.add(Double.toString(lattitude));
-			float d=distinationInMeters(lattitude,longtitude,32.9134697284472,35.287984217295545 );
-			if(lattitude!=0 && d<15)
-			{
-				msgValue.add("IN");
-				
+		else{
+			placedAtt = FragmentTabTutorialApplication.places_in_route.get(FragmentTabTutorialApplication.currentPlacePosition).attitude;
+			placeLatt = FragmentTabTutorialApplication.places_in_route.get(FragmentTabTutorialApplication.currentPlacePosition).latitude;
+		}
+		while(placeReached == false)
+		{
+			try {
+				//TODO: create function to check the location
+				Thread.sleep(10000);
+				if(placedAtt==0 || placeLatt==0)
+					placeReached=true;
+				else {
+					lattitude=GPSLocation.lattitude;
+					longtitude=GPSLocation.atitude;
+					float d=distinationInMeters(lattitude,longtitude,placeLatt,placedAtt );
+					if(lattitude!=0 && d<15)
+					{
+						placeReached=true;
+					}
+				}
+			} catch (InterruptedException e) {
+				//TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			else
-				msgValue.add("OUT");
-			msgValue.add(Float.toString(d));
-			msgToServ = new SystemObject(msgValue,SystemMode.GPSPOINTS);
-			ConnectionControl.sendToServer(msgToServ);
-			*/	
+		}
+		Intent i = new Intent();
+		i.setAction(Intent.ACTION_MAIN);
+		i.addCategory(Intent.CATEGORY_LAUNCHER);
+		i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		ComponentName cn = new ComponentName(this, Main_activity_after_navigate.class);
+		i.setComponent(cn);
+		startActivity(i);
+		stopSelf();
+	}
 	public static float distinationInMeters(double lat1, double lng1, double lat2, double lng2) {
 	    double earthRadius = 3958.75;
 	    double dLat = Math.toRadians(lat2-lat1);

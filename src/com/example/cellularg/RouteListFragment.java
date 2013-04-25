@@ -45,7 +45,7 @@ public class RouteListFragment extends ListFragment {
         		Integer selected_id = Integer.valueOf(position);
         		Fragment_main_for_route main_fargment = new Fragment_main_for_route();
                 FragmentTabTutorialApplication.place_or_route = false;
-                FragmentTabTutorialApplication.setCurrentID(selected_id);
+                FragmentTabTutorialApplication.currentPlacePosition=position;
         		FragmentTransaction ft = fm.beginTransaction();
         		ft.replace(R.id.fragment_content_sec, new Fragment_tab_for_route());
         		ft.replace(R.id.fragment_content, main_fargment);

@@ -37,7 +37,7 @@ public class LocationListFragment extends ListFragment {
             	Integer selected_id = Integer.valueOf(position);
             	Fragment_main_for_place main_fargment = new Fragment_main_for_place();
                 FragmentTabTutorialApplication.place_or_route = true;
-                FragmentTabTutorialApplication.setCurrentID(selected_id);
+                FragmentTabTutorialApplication.currentPlacePosition = position;
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.fragment_content_sec, new Fragment_tab_for_place());
                 ft.replace(R.id.fragment_content, main_fargment);

@@ -44,6 +44,7 @@ public class Main_activity_after_navigate extends FragmentActivity implements Ch
 	boolean reciveMSG = false;
 	private int stationNumber;
 	private int bringStation = 0;
+	private int idPlace=0;
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,8 +60,10 @@ public class Main_activity_after_navigate extends FragmentActivity implements Ch
             ft.replace(R.id.fragment_content_Body_an, listFragment);
             ft.commit();      
             }
-		Integer i=Integer.valueOf(FragmentTabTutorialApplication.currentPlace);
-		msgToServ = new SystemObject(i,SystemMode.GETSTATIONFORPLACE);
+        if(FragmentTabTutorialApplication.place_or_route==true)
+        	idPlace=Integer.valueOf(FragmentTabTutorialApplication.sLocations.get(FragmentTabTutorialApplication.currentPlacePosition).idPlace);
+        else idPlace=Integer.valueOf(FragmentTabTutorialApplication.places_in_route.get(FragmentTabTutorialApplication.currentPlacePosition).idPlace);
+		msgToServ = new SystemObject(idPlace,SystemMode.GETSTATIONFORPLACE);
 		ConnectionControl.sendToServer(msgToServ);
     }
 	@Override
@@ -84,14 +87,13 @@ public class Main_activity_after_navigate extends FragmentActivity implements Ch
 			case GETFILEFROMSERVER:
 				ArrayList<Object> objectFiles = (ArrayList<Object>) msgSrv.getObj();
 				SaveFileAs(objectFiles.get(0),AUDIO);
-				SaveFileAs(objectFiles.get(0),IMAGE);
-				SaveFileAs(objectFiles.get(0),DOC);
+				SaveFileAs(objectFiles.get(1),IMAGE);
+				SaveFileAs(objectFiles.get(2),DOC);
 				this.bringStation++;
 				if(bringStation < FragmentTabTutorialApplication.stations_for_place.size())
 					ask_for_files_from_server(bringStation);
 				else
 				{
-					FragmentTabTutorialApplication.currentStation = 0;
 					FragmentManager fm = getSupportFragmentManager();
 					if (fm != null) {
 						Fragment_Head tabFragment = new Fragment_Head();
@@ -113,9 +115,9 @@ public class Main_activity_after_navigate extends FragmentActivity implements Ch
 		listFiles.add(FragmentTabTutorialApplication.stations_for_place.get(i).PathToAudio);
 		listFiles.add(FragmentTabTutorialApplication.stations_for_place.get(i).PathToImage);
 		listFiles.add(FragmentTabTutorialApplication.stations_for_place.get(i).PathToDoc);
+		stationNumber = FragmentTabTutorialApplication.stations_for_place.get(i).idStation;
 		msgToServ = new SystemObject(listFiles,SystemMode.GETFILEFROMSERVER);
 		ConnectionControl.sendToServer(msgToServ);
-		stationNumber = FragmentTabTutorialApplication.stations_for_place.get(i).idStation;
 	}
 	public void SaveFileAs(Object obj, int mode) {
 			
@@ -142,8 +144,8 @@ public class Main_activity_after_navigate extends FragmentActivity implements Ch
 			if (!success) {
 				//TODO: add function to exit if there any error
 			}
-			success = (new File(pathS+"/CellularGuide/"+FragmentTabTutorialApplication.currentPlace)).mkdirs();
-			st = new FileOutputStream(path+"/CellularGuide/" +FragmentTabTutorialApplication.currentPlace+"/"+stationNumber+ type);
+			success = (new File(pathS+"/CellularGuide/"+idPlace)).mkdirs();
+			st = new FileOutputStream(path+"/CellularGuide/" +idPlace+"/"+stationNumber+ type);
 			st.write(bytes);			
 			st.flush();		    	
 			st.close();

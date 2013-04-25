@@ -157,12 +157,10 @@ public class MainActivity extends Activity implements ChatIF{
 		            }
 					FragmentTabTutorialApplication.addToPathPlace(newList);
 				}
-			}
-			
-			
 				Intent i = new Intent(getApplicationContext(), SecondActivity.class);
-		        startActivity(i);
-				break;
+				startActivity(i);
+			}
+			break;
 		}
 	}
 	

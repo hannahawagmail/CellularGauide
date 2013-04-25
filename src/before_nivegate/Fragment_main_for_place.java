@@ -51,7 +51,7 @@ public class Fragment_main_for_place extends Fragment {
         subTextView = (TextView)view.findViewById(R.id.subTextView_in_main_bn);
         imageMainView = (ImageView)view.findViewById(R.id.mainImageView_in_main_bn);
         
-        position = FragmentTabTutorialApplication.position;
+        position = FragmentTabTutorialApplication.currentPlacePosition;
         mainTextView.setText(FragmentTabTutorialApplication.sLocations.get(position).placeName);
         subTextView.setText(FragmentTabTutorialApplication.sLocations.get(position).discribtion);
         
@@ -80,13 +80,6 @@ public class Fragment_main_for_place extends Fragment {
 			}
 		});
         return view;
-    }
-	
-	@Override
-	public void onPause()
-    {
-    	super.onPause();
-    	Log.i("fdsfsdf","in activity !!!!!!!!!");
     }
 	private void goToUrl (String url) {
         Uri uriUrl = Uri.parse(url);

@@ -48,18 +48,22 @@ public class Fragment_Body extends Fragment {
 	
 	private Button buttonPlayStop;
 	private SeekBar seekBar;
-	private MediaPlayer MP;
+	public static MediaPlayer MP;
 	private  Handler handler;
 	private ImageView imageView;
 	private int currentStation;
+	private int currentPlace;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tab_body_an, container, false);
         handler = new Handler();
-        currentStation = FragmentTabTutorialApplication.stations_for_place.get(FragmentTabTutorialApplication.currentStation).idStation;
+        currentStation = FragmentTabTutorialApplication.stations_for_place.get(FragmentTabTutorialApplication.currentStationPosition).idStation;
+        if(FragmentTabTutorialApplication.place_or_route==true)
+        	currentPlace=Integer.valueOf(FragmentTabTutorialApplication.sLocations.get(FragmentTabTutorialApplication.currentPlacePosition).idPlace);
+        else currentPlace=Integer.valueOf(FragmentTabTutorialApplication.places_in_route.get(FragmentTabTutorialApplication.currentPlacePosition).idPlace);
 		File path = Environment.getExternalStorageDirectory(); 
 		String pathS = path.getPath();
-        MP = MediaPlayer.create(view.getContext(), Uri.parse(pathS+"/CellularGuide/" +FragmentTabTutorialApplication.currentPlace+"/"+currentStation+ ".mp3"));
+        MP = MediaPlayer.create(view.getContext(), Uri.parse(pathS+"/CellularGuide/" +currentPlace+"/"+currentStation+ ".mp3"));
 //        File imgFile = new  File(pathS+"/CellularGuide/" +FragmentTabTutorialApplication.currentPlace+"/"+currentStation+ ".jpg");
 //        BitmapFactory.Options bmo = new BitmapFactory.Options();
 //        bmo.inPreferredConfig = Config.ARGB_8888;
@@ -72,7 +76,7 @@ public class Fragment_Body extends Fragment {
 //        }
         //TODO: fix the image!! 
         imageView = (ImageView) view.findViewById(R.id.imageView1);
-        imageView.setImageURI(Uri.parse(pathS+"/CellularGuide/" +FragmentTabTutorialApplication.currentPlace+"/"+currentStation+ ".jpg"));
+        imageView.setImageURI(Uri.parse(pathS+"/CellularGuide/" +currentPlace+"/"+currentStation+ ".jpg"));
         buttonPlayStop = (Button) view.findViewById(R.id.ButtonPlayStop);
         seekBar = (SeekBar) view.findViewById(R.id.SeekBar01);
     	seekBar.setMax(MP.getDuration());
