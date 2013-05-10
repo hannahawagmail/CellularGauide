@@ -19,21 +19,25 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name="com.example.cellularg.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity" android:label="@string/app_name"/>
-          <activity android:name=".Main_activity_after_navigate" android:label="@string/app_name"/>
-        <activity android:name=".RegisterActivity" android:label="@string/app_name"/>
+        <activity android:name=".SecondActivity" android:label="@string/app_name"
+             android:screenOrientation="portrait"/>
+          <activity android:name=".Main_activity_after_navigate" android:label="@string/app_name"
+               android:screenOrientation="portrait"/>
+        <activity android:name=".RegisterActivity" android:label="@string/app_name"
+             android:screenOrientation="portrait"/>
 	<service android:enabled="true" android:name=".MyService" />
     </application>
 

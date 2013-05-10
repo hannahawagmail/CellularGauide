@@ -47,7 +47,7 @@ import android.widget.TextView;
 public class Fragment_Body extends Fragment {
 	
 	private Button buttonPlayStop;
-	private SeekBar seekBar;
+	public static SeekBar seekBar;
 	public static MediaPlayer MP;
 	private  Handler handler;
 	private ImageView imageView;
@@ -75,9 +75,11 @@ public class Fragment_Body extends Fragment {
 //
 //        }
         //TODO: fix the image!! 
+       
         imageView = (ImageView) view.findViewById(R.id.imageView1);
         imageView.setImageURI(Uri.parse(pathS+"/CellularGuide/" +currentPlace+"/"+currentStation+ ".jpg"));
         buttonPlayStop = (Button) view.findViewById(R.id.ButtonPlayStop);
+        buttonPlayStop.setText("play");
         seekBar = (SeekBar) view.findViewById(R.id.SeekBar01);
     	seekBar.setMax(MP.getDuration());
         buttonPlayStop.setOnClickListener(new OnClickListener() {@Override public void onClick(View v) {buttonClick();}});

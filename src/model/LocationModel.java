@@ -12,7 +12,7 @@ public class LocationModel {
     public Double latitude;
     public String discribtion;
     
-    public LocationModel(int    idPlace, String placeName, int    idArea, String areaName, String travelTime, String wazeLink, Double attitude, Double latitude, String discribtion) {
+    public LocationModel(int    idPlace, String placeName, int    idArea, String areaName, String travelTime, String wazeLink, Double latitude, Double attitude, String discribtion) {
         this.idPlace      = idPlace;
         this.placeName = placeName;
         this.idArea = idArea;

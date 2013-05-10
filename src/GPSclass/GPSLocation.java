@@ -9,7 +9,8 @@ import android.widget.Toast;
 
 
 public class GPSLocation implements LocationListener{
-	public static double atitude=0,lattitude=0;
+	public double atitude=0;
+	public double lattitude=0;
 	
 	@Override
 	public void onLocationChanged(Location location) {

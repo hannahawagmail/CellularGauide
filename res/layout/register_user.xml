@@ -1,40 +1,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/Goldenrod"
+    android:background="@drawable/img2"
     android:orientation="vertical" >
+
     <EditText
         android:id="@+id/reg_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text" 
+        android:inputType="text"
+        android:singleLine="true"
         android:text="hanna.hawa@gmail.com"
-		android:singleLine="true"
-        />
+        android:textColor="@color/White" />
+
     <EditText
         android:id="@+id/reg_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-		android:singleLine="true" 
+        android:singleLine="true"
         android:text="12345678"
-        />
+        android:textColor="@color/White" />
+
     <EditText
         android:id="@+id/reg_fname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text" 
-        android:text="Hanna"
+        android:inputType="text"
         android:singleLine="true"
-        />
+        android:text="Hanna"
+        android:textColor="@color/White" />
+
     <EditText
         android:id="@+id/reg_lname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text" 
-        android:text="Hawa"
+        android:inputType="text"
         android:singleLine="true"
-        >
+        android:text="Hawa"
+        android:textColor="@color/White" >
+
 		<requestFocus />
     </EditText>
     <RelativeLayout

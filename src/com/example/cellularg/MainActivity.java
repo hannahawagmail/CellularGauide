@@ -50,9 +50,9 @@ public class MainActivity extends Activity implements ChatIF{
         Port = (EditText) findViewById(R.id.PORT);
         password = (EditText) findViewById(R.id.password);
         userEmail = (EditText) findViewById(R.id.email);
-        mIP=  "192.168.1.7";
-        //mIP=  "172.20.10.5";
-        //mIP=  "87.69.244.100";
+        //mIP=  "10.0.0.253";
+     //   mIP=  "192.168.2.107";
+        mIP=  "87.69.244.100";
         mPort=8080;
         Thread toRun = new Thread(new Runnable() {
 			

@@ -83,8 +83,10 @@ public class Fragment_Head extends Fragment {
         	public void onClick(View v) {
         		// TODO Auto-generated method stub
 				if (Fragment_Body.MP.isPlaying()) {
+					//Fragment_Body.seekBar.setProgress(0);
 					Fragment_Body.MP.stop();
 				}
+			//	Fragment_Body.seekBar.setProgress(0);
 				nextStationButton.setEnabled(true);
 				prevoiusStationButton.setEnabled(true);
         		FragmentTabTutorialApplication.currentStationPosition++;
@@ -109,6 +111,7 @@ public class Fragment_Head extends Fragment {
 				if (Fragment_Body.MP.isPlaying()) {
 					Fragment_Body.MP.stop();
 				}
+				Fragment_Body.seekBar.setProgress(0);
 				nextStationButton.setEnabled(true);
 				prevoiusStationButton.setEnabled(true);
         		FragmentTabTutorialApplication.currentStationPosition--;

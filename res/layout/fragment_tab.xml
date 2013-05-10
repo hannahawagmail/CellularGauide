@@ -6,7 +6,8 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
+        android:background="@drawable/img2"
         android:gravity="center"
         android:padding="10dp" >
 
@@ -14,17 +15,23 @@
             android:id="@+id/list_view_place"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/label_view_place" />
+            android:layout_gravity="top"
+            android:text="@string/label_view_place"
+            android:textColor="@color/AntiqueWhite" />
+
         <Button
             android:id="@+id/list_view_route"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/label_view_route" />
+            android:layout_gravity="top"
+            android:text="@string/label_view_route"
+            android:textColor="@color/AntiqueWhite" />
+
     </LinearLayout>
 
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:background="#dddddd" />
+        android:background="@drawable/img2" />
 
 </LinearLayout>

@@ -1,55 +1,41 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/RelativeLayout1"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TableLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/White"
-    android:columnCount="1" >
+    android:background="@drawable/img2"
+    android:splitMotionEvents="false" >
 
-    <EditText
-        android:id="@+id/editText1"
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </TableRow>
+
+    <ImageView
+        android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="24dp"
-        android:layout_marginLeft="14dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:text="Mark Elliot Zuckerberg" >
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="18dp"
+        android:adjustViewBounds="true"
+        android:paddingBottom="0dp"
+        android:scaleType="center"
+        android:src="@drawable/road" />
 
-        <requestFocus />
-    </EditText>
+    <SeekBar
+        android:id="@+id/SeekBar01"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:minWidth="200dp" />
 
-   <Button
-       android:id="@+id/ButtonPlayStop"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_above="@+id/editText1"
-       android:layout_marginBottom="53dp"
-       android:layout_toLeftOf="@+id/SeekBar01"
-       android:text="play"
-       android:textSize="15pt"
-       android:textStyle="bold" />
+    <Button
+        android:id="@+id/ButtonPlayStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="play"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
-   <SeekBar
-       android:id="@+id/SeekBar01"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_alignBottom="@+id/ButtonPlayStop"
-       android:layout_alignParentRight="true"
-       android:layout_marginBottom="11dp"
-       android:layout_marginRight="38dp"
-       android:minWidth="200dp" />
-
-   <ImageView
-       android:id="@+id/imageView1"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_above="@+id/ButtonPlayStop"
-       android:layout_alignRight="@+id/SeekBar01"
-       android:layout_marginBottom="39dp"
-       android:layout_marginRight="38dp"
-       android:src="@drawable/road" />
-
-</RelativeLayout>
+</TableLayout>

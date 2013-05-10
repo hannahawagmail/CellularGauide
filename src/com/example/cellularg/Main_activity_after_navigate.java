@@ -75,6 +75,7 @@ public class Main_activity_after_navigate extends FragmentActivity implements Ch
 				Log.i("999999*************", "Doneeeeeee");
 				break;
 			case GETSTATIONFORPLACE:
+				FragmentTabTutorialApplication.stations_for_place.clear();
 				Vector<Vector> allstations = (Vector<Vector>) msgSrv.getObj();
 				for(int i=0;i<allstations.size();i++)
 				{
