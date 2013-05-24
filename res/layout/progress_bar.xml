@@ -50,7 +50,7 @@
         android:enabled="false"
         android:paddingBottom="100dp"
         android:paddingLeft="100dp"
-        android:textColor="@color/White" >
+        android:textColor="@color/Blue" >
 
         <requestFocus />
     </EditText>

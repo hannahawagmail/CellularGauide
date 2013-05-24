@@ -11,7 +11,7 @@
         android:inputType="text"
         android:singleLine="true"
         android:text="hanna.hawa@gmail.com"
-        android:textColor="@color/White" />
+        android:textColor="@color/Blue" />
 
     <EditText
         android:id="@+id/reg_password"
@@ -20,7 +20,7 @@
         android:inputType="textPassword"
         android:singleLine="true"
         android:text="12345678"
-        android:textColor="@color/White" />
+        android:textColor="@color/Blue" />
 
     <EditText
         android:id="@+id/reg_fname"
@@ -29,7 +29,7 @@
         android:inputType="text"
         android:singleLine="true"
         android:text="Hanna"
-        android:textColor="@color/White" />
+        android:textColor="@color/Blue" />
 
     <EditText
         android:id="@+id/reg_lname"
@@ -38,7 +38,7 @@
         android:inputType="text"
         android:singleLine="true"
         android:text="Hawa"
-        android:textColor="@color/White" >
+        android:textColor="@color/Blue" >
 
 		<requestFocus />
     </EditText>

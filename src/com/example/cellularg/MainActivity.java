@@ -23,11 +23,13 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements ChatIF{
 
+	public static boolean debugMode =false;
 	private ConnectionControl connC;
 	public boolean IsConnected;
 	public Button loginButton;
@@ -36,6 +38,7 @@ public class MainActivity extends Activity implements ChatIF{
 	public EditText Port;
 	private EditText password;
 	private EditText userEmail;
+	private CheckBox myCheckBox;
 	SystemObject msgToServ;
 	public String mIP;
 	public int mPort;
@@ -50,9 +53,10 @@ public class MainActivity extends Activity implements ChatIF{
         Port = (EditText) findViewById(R.id.PORT);
         password = (EditText) findViewById(R.id.password);
         userEmail = (EditText) findViewById(R.id.email);
+        myCheckBox = (CheckBox) findViewById(R.id.checkBox1);
         //mIP=  "10.0.0.253";
-     //   mIP=  "192.168.2.107";
-        mIP=  "87.69.244.100";
+        //mIP=  "192.168.2.107";
+        mIP=  "192.168.1.5";
         mPort=8080;
         Thread toRun = new Thread(new Runnable() {
 			
@@ -86,6 +90,7 @@ public class MainActivity extends Activity implements ChatIF{
 		        startActivity(i);
 			}
 		});
+        
 		//Intent i = new Intent(getApplicationContext(), SecondActivity.class);
         //startActivity(i);
         
@@ -156,6 +161,10 @@ public class MainActivity extends Activity implements ChatIF{
 		              newList.add(Integer.valueOf(myInt)); 
 		            }
 					FragmentTabTutorialApplication.addToPathPlace(newList);
+				}
+				if(myCheckBox.isChecked())
+				{
+					debugMode=true;
 				}
 				Intent i = new Intent(getApplicationContext(), SecondActivity.class);
 				startActivity(i);

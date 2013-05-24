@@ -19,7 +19,7 @@
                 android:layout_height="wrap_content"
                 android:text="Main Text View"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/White" />
+                android:textColor="@color/Blue" />
 
         </TableRow>
 

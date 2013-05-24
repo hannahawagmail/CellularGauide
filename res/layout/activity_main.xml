@@ -28,7 +28,7 @@
         android:inputType="text"
         android:singleLine="true"
         android:text="hanna.hawa@gmail.com"
-        android:textColor="@color/White"
+        android:textColor="@color/Blue"
         android:textColorHint="@color/Black" />
 
     <EditText
@@ -39,7 +39,7 @@
         android:inputType="textPassword"
         android:singleLine="true"
         android:text="12345678"
-        android:textColor="@color/White" />
+        android:textColor="@color/Blue" />
 
     <EditText
         android:id="@+id/IP"
@@ -90,5 +90,11 @@
             android:textColor="@color/Black"
             android:textSize="20dp" />
     </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Debug" />
 
 </LinearLayout>

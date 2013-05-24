@@ -2,8 +2,8 @@
 <resources>
  <color name="White">#FFFFFF</color>
  <color name="Ivory">#FFFFF0</color>
- <color name="LightYellow">#FFFFE0</color>
- <color name="Yellow">#FFFF00</color>
+ <color name="Lightblack">#FFFFE0</color>
+ <color name="black">#FFFF00</color>
  <color name="Snow">#FFFAFA</color>
  <color name="FloralWhite">#FFFAF0</color>
  <color name="LemonChiffon">#FFFACD</color>
@@ -32,7 +32,7 @@
  <color name="Magenta">#FF00FF</color>
  <color name="Red">#FF0000</color>
  <color name="OldLace">#FDF5E6</color>
- <color name="LightGoldenrodYellow">#FAFAD2</color>
+ <color name="LightGoldenrodblack">#FAFAD2</color>
  <color name="Linen">#FAF0E6</color>
  <color name="AntiqueWhite">#FAEBD7</color>
  <color name="Salmon">#FA8072</color>
@@ -75,12 +75,12 @@
  <color name="PowderBlue">#B0E0E6</color>
  <color name="LightSteelBlue">#B0C4DE</color>
  <color name="PaleTurquoise">#AFEEEE</color>
- <color name="GreenYellow">#ADFF2F</color>
+ <color name="Greenblack">#ADFF2F</color>
  <color name="LightBlue">#ADD8E6</color>
  <color name="DarkGray">#A9A9A9</color>
  <color name="Brown">#A52A2A</color>
  <color name="Sienna">#A0522D</color>
- <color name="YellowGreen">#9ACD32</color>
+ <color name="blackGreen">#9ACD32</color>
  <color name="DarkOrchid">#9932CC</color>
  <color name="PaleGreen">#98FB98</color>
  <color name="DarkViolet">#9400D3</color>

@@ -117,6 +117,16 @@ public int onStartCommand(Intent intent, int flags, int startId)
 public void onCreate()
 {
     Log.e(TAG, "onCreate");
+    if(MainActivity.debugMode)
+    {
+    	try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	stopSelf();
+    }
     initializeLocationManager();
     try {
         mLocationManager.requestLocationUpdates(
